@@ -19,6 +19,7 @@
                 <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
+                <RowDefinition/>
             </Grid.RowDefinitions>
             <TextBlock Text="id" Grid.Row="0" Grid.Column="0"/>
             <TextBox x:Name="idv" Grid.Row="0" Grid.Column="1"/>
@@ -30,9 +31,13 @@
             <TextBox x:Name="amountv" Grid.Row="3" Grid.Column="1"/>
             <TextBlock Text="isout" Grid.Row="4" Grid.Column="0"/>
             <CheckBox x:Name="isoutv" Grid.Row="4" Grid.Column="1"/>
-            <Button Grid.ColumnSpan="2" Content="save" Grid.Row="5" Click="Button_Click" />
+            <Button  Content="save" Grid.Row="5" Grid.Column="0" Click="Save_Click" />
+            <Button  Content="edit" Grid.Row="5" Grid.Column="1" Click="Edit_Click" />
+            <Button  Content="delete" Grid.Row="6"  Click="Delete_Click" />
+
+
         </Grid>
-        <DataGrid x:Name="prodlist" AutoGenerateColumns="False">
+        <DataGrid x:Name="prodlist" AutoGenerateColumns="False" SelectionChanged="prodlist_SelectionChanged" Width="214">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="id" Binding="{Binding Id}" />
                 <DataGridTextColumn Header="name" Binding="{Binding Name}" />
